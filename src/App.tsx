@@ -1,0 +1,312 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Code, 
+  Plug, 
+  Users, 
+  Target, 
+  CheckCircle, 
+  ArrowRight,
+  Building,
+  BookOpen,
+  Rocket,
+  DollarSign,
+  MessageCircle,
+  ExternalLink,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin
+} from 'lucide-react';
+
+function App() {
+  const plugins = [
+    {
+      name: "Skills Assessment",
+      description: "Real-time skill gap analysis with market benchmarking",
+      status: "Beta",
+      icon: <Target className="w-6 h-6" />,
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      name: "Role Matching",
+      description: "AI-powered job matching with 95% accuracy",
+      status: "Beta", 
+      icon: <Users className="w-6 h-6" />,
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      name: "Salary Benchmarker",
+      description: "Live market salary data and negotiation insights",
+      status: "Beta",
+      icon: <DollarSign className="w-6 h-6" />,
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      name: "Learning Path Engine",
+      description: "Personalized career development roadmaps",
+      status: "Development",
+      icon: <BookOpen className="w-6 h-6" />,
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      name: "Mentorship Connector",
+      description: "AI-matched mentor-mentee relationships",
+      status: "Development",
+      icon: <MessageCircle className="w-6 h-6" />,
+      color: "from-indigo-500 to-purple-500"
+    }
+  ];
+
+  const metrics = [
+    { value: "50,000+", label: "Waitlisted Professionals", icon: <Users className="w-8 h-8" /> },
+    { value: "5", label: "Core Plugins", icon: <Plug className="w-8 h-8" /> },
+    { value: "3", label: "Integration Pilots", icon: <Building className="w-8 h-8" /> },
+    { value: "95%", label: "AI Matching Accuracy", icon: <Target className="w-8 h-8" /> }
+  ];
+
+  const timeline = [
+    { period: "Q4 2025", milestone: "Closed Beta Launch", status: "current" },
+    { period: "Q1 2026", milestone: "Public Release", status: "upcoming" },
+    { period: "Q2 2026", milestone: "Plugin Marketplace", status: "upcoming" },
+    { period: "Q3 2026", milestone: "Enterprise Scale", status: "future" }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center space-x-4">
+              <h1 className="text-2xl font-bold text-gray-900">VibeTensor</h1>
+              <span className="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                YC Fall 2025
+              </span>
+            </div>
+            <nav className="hidden md:flex space-x-8">
+              <a href="#product" className="text-gray-600 hover:text-gray-900">Product</a>
+              <a href="#progress" className="text-gray-600 hover:text-gray-900">Progress</a>
+              <a href="#business" className="text-gray-600 hover:text-gray-900">Business</a>
+              <a href="#contact" className="text-gray-600 hover:text-gray-900">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center space-x-2 bg-orange-100 border border-orange-300 rounded-full px-6 py-3 mb-8"
+            >
+              <Rocket className="w-5 h-5 text-orange-600" />
+              <span className="text-orange-600 font-semibold">Y Combinator Fall 2025 Application</span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+            >
+              Plugin-Based
+              <span className="gradient-text block">Career Intelligence Toolkit</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed"
+            >
+              Embeddable career plugins that developers and enterprises integrate via our API/SDK. 
+              Each plugin installs directly into LMS, ATS, chatbots, or web portals.
+              <span className="font-semibold text-orange-600"> 50,000+ professionals</span> already on our waitlist.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center space-x-2 hover:shadow-lg transition-all">
+                <Code className="w-5 h-5" />
+                <span>View API Documentation</span>
+              </button>
+              <button className="border-2 border-gray-300 hover:border-orange-500 text-gray-700 hover:text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg flex items-center justify-center space-x-2 transition-all">
+                <ExternalLink className="w-5 h-5" />
+                <span>Live Demo</span>
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Metrics */}
+      <section id="progress" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Current Progress</h2>
+            <p className="text-lg text-gray-600">Build stage with strong early traction</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {metrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
+              >
+                <div className="text-orange-500 mb-4 flex justify-center">
+                  {metric.icon}
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">{metric.value}</div>
+                <div className="text-gray-600">{metric.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Section */}
+      <section id="product" className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Career Intelligence <span className="text-orange-500">Plugin Ecosystem</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Modular career tools that embed directly into existing platforms via our API/SDK
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {plugins.map((plugin, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all group"
+              >
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${plugin.color} flex items-center justify-center mb-4 text-white group-hover:scale-110 transition-transform`}>
+                  {plugin.icon}
+                </div>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-semibold text-gray-900">{plugin.name}</h3>
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    plugin.status === 'Beta' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
+                  }`}>
+                    {plugin.status}
+                  </span>
+                </div>
+                <p className="text-gray-600 mb-4">{plugin.description}</p>
+                <button className="text-orange-500 hover:text-orange-700 font-medium flex items-center space-x-1 group">
+                  <span>Learn more</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Roadmap */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Product Roadmap</h2>
+            <p className="text-lg text-gray-600">From closed beta to enterprise scale</p>
+          </div>
+
+          <div className="space-y-8">
+            {timeline.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className={`flex items-center space-x-6 p-6 rounded-2xl border-2 ${
+                  item.status === 'current' 
+                    ? 'bg-orange-50 border-orange-500' 
+                    : item.status === 'upcoming'
+                    ? 'bg-blue-50 border-blue-200'
+                    : 'bg-gray-50 border-gray-200'
+                }`}
+              >
+                <div className={`w-4 h-4 rounded-full ${
+                  item.status === 'current' ? 'bg-orange-500' :
+                  item.status === 'upcoming' ? 'bg-blue-500' : 'bg-gray-400'
+                }`}></div>
+                <div className="flex-1">
+                  <div className="flex items-center space-x-4">
+                    <span className="text-gray-600 font-medium">{item.period}</span>
+                    <span className="font-semibold text-gray-900">{item.milestone}</span>
+                    {item.status === 'current' && (
+                      <span className="px-3 py-1 bg-orange-500 text-white rounded-full text-xs font-medium">
+                        In Progress
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section id="contact" className="py-20 bg-orange-500">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Join 50,000+ Professionals on Our Waitlist
+          </h2>
+          <p className="text-xl text-orange-100 mb-8">
+            Get early access to the career intelligence platform built for the future of work
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-white text-orange-500 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-all">
+              Join Beta Waitlist
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-orange-500 transition-all">
+              Enterprise Demo
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-6 md:mb-0">
+              <h3 className="text-2xl font-bold text-white mb-2">VibeTensor</h3>
+              <p className="text-gray-400">Plugin-based career intelligence platform</p>
+            </div>
+            <div className="flex items-center space-x-6 text-gray-400">
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-4 h-4" />
+                <span>Warangal, India</span>
+              </div>
+              <span>•</span>
+              <span>YC Fall 2025</span>
+              <span>•</span>
+              <a href="mailto:founder@vibetensor.com" className="hover:text-white">
+                founder@vibetensor.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
